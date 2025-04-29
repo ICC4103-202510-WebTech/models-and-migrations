@@ -6,6 +6,10 @@ class Author < ApplicationRecord
 
   before_validation :normalize_name
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
   def normalize_name
     self.first_name = first_name.strip().titleize()

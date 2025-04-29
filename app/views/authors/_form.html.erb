@@ -1,0 +1,15 @@
+<%= form_with model: @author do |form| %>
+    <div>
+        <%= form.label :first_name, "Nombre" %>
+        <%= form.text_field :first_name, placeholder: "Escribe aquí el Nombre del autor" %>
+    </div>
+
+    <div>
+        <%= form.label :last_name, "Apellido" %>
+        <%= form.text_field :last_name, placeholder: "Apellido del autor" %>
+    </div>
+
+    <div>
+        <%= form.submit "Guardar" %>
+    </div>
+<% end %>
