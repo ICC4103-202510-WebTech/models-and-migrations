@@ -23,6 +23,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render partial: "layouts/navbar" %>
+       <%= render partial: "layouts/messages" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

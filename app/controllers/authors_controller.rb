@@ -15,9 +15,12 @@ class AuthorsController < ApplicationController
     @author = Author.new author_params
     if @author.save
       # redirect_to author_path(author)
+      flash[:notice] = "Autor guardado con éxito"
       redirect_to authors_path
     else
-      render :new
+      # render :new
+      flash[:alert] = "#{@author.errors.full_messages.join(", ")}"
+      redirect_to new_author_path
     end
   end
 

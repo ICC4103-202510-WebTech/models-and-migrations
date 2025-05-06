@@ -1,15 +1,16 @@
 <%= form_with model: @author do |form| %>
-    <div>
+    <div class= "mb-3 col-3">
         <%= form.label :first_name, "Nombre" %>
-        <%= form.text_field :first_name, placeholder: "Escribe aquí el Nombre del autor" %>
+        <%= form.text_field :first_name, placeholder: "Escribe aquí el Nombre del autor", class: "form-control" %>
     </div>
 
-    <div>
+    <div class="mb-3 col-3">
         <%= form.label :last_name, "Apellido" %>
-        <%= form.text_field :last_name, placeholder: "Apellido del autor" %>
+        <%= form.text_field :last_name, placeholder: "Apellido del autor", class: "form-control" %>
     </div>
 
     <div>
-        <%= form.submit "Guardar" %>
+        <%= link_to "Cancelar", authors_path, class: 'btn btn-secondary' %>
+        <%= form.submit "Guardar", class: "btn btn-primary" %>
     </div>
 <% end %>

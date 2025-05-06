@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   # get "/books", to: "books#index"
   # get "/books/:id", to: "books#show"
+  root "books#index"
   resources :books
   resources :authors
 end
