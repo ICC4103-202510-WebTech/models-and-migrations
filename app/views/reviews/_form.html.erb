@@ -1,0 +1,16 @@
+<%= form_with model: @review do |form| %>
+    <div class= "mb-3 col-3">
+        <%= form.label :title, "Título" %>
+        <%= form.text_field :title, placeholder: "Escribe aquí el Título del Review", class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :body, "Contenido" %>
+        <%= form.rich_textarea :body %>
+    </div>
+
+    <div>
+        <%= link_to "Cancelar", reviews_path, class: 'btn btn-secondary' %>
+        <%= form.submit "Guardar", class: "btn btn-primary" %>
+    </div>
+<% end %>
