@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [ :show, :edit, :update ]
+  before_action :set_review, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_books, only: [ :new, :edit ]
   def index
     @reviews = Review.all
   end
@@ -32,12 +33,22 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review.destroy
+    redirect_to reviews_path
+  end
+
   private
     def review_params
-      params.require(:review).permit(:title, :body)
+      params.require(:review).permit(:title, :body, :book_id)
     end
 
     def set_review
       @review = Review.find params["id"]
+    end
+
+    def set_books
+      rgdzfg
+      @books = Book.all.map { |b| [ b.title, b.id ] }
     end
 end

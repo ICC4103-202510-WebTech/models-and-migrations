@@ -4,6 +4,11 @@
         <%= form.text_field :title, placeholder: "Escribe aquí el Título del Review", class: "form-control" %>
     </div>
 
+    <div class="mb-3 col-4">
+        <%= form.label :book_id, "Libro" %>
+        <%= form.select :book_id, @books %>
+    </div>
+
     <div class="mb-3">
         <%= form.label :body, "Contenido" %>
         <%= form.rich_textarea :body %>
